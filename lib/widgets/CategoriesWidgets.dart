@@ -7,6 +7,7 @@ import 'package:online_shopping/pants.dart';
 import 'package:online_shopping/skirts.dart';
 import 'package:online_shopping/tops.dart';
 
+
 class CategoriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pannable_rating_bar/flutter_pannable_rating_bar.dart';
 import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
 import 'package:online_shopping/models/Product_Data.dart';
-import 'package:online_shopping/widgets/containerbuttonmodel.dart';
+import 'package:online_shopping/widgets/ButtonModel.dart';
 import 'package:online_shopping/widgets/productdetails.dart';
+
 
 class ProductScreen extends StatefulWidget {
   final ItemData itemData;
@@ -177,11 +178,24 @@ class _ProductScreenState extends State<ProductScreen> {
                       ),
                     );
                   },
-                  child: ContainerButtonModel(
+                  child: ButtonModel(
                     containerWidth: MediaQuery.of(context).size.width,
                     itext: "View Details",
                     bgColor: const Color(0xFF4C53A5),
                   ),
+
+                 /* ContainerButtonModel(
+            containerWidth: MediaQuery.of(context).size.width * 0.3,
+            itext: "View Details",
+            bgColor: Color(0xFF4C53A5),
+            onTap: () {
+              debugPrint('Buy Now button tapped');
+              // Add your desired action here
+            },
+          )
+*/
+
+
                 ),
               ],
             ),

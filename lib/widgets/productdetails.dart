@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_shopping/CartPage.dart';
 import 'package:online_shopping/models/Product_Data.dart';
-import 'package:online_shopping/widgets/containerbuttonmodel.dart';
+import 'package:online_shopping/widgets/ButtonModel.dart';
 
 class ProductDetails extends StatelessWidget {
   final ItemData itemData;
@@ -58,21 +58,26 @@ class ProductDetails extends StatelessWidget {
             _buildDetailRow(Icons.star, "Rating", itemData.rating.toString()),
             _buildDetailRow(Icons.update, "Update Status", itemData.updateStatus),
 
-
             InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CartPage()),
-                    );
-                  },
-                  child: ContainerButtonModel(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartPage(cartItems: [itemData]),
+                  ),
+                );
+              },
+            
+
+            child: ButtonModel(
                     containerWidth: MediaQuery.of(context).size.width,
                     itext: "Add to Cart",
                     bgColor: Color(0xFF4C53A5),
                   ),
-                ),
+
+
+
+            ),
           ],
         ),
       ),
@@ -107,7 +112,6 @@ class ProductDetails extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:online_shopping/models/Product_Data.dart';
 import 'package:online_shopping/productscreen.dart';
 
+
 class ItemsWidget extends StatelessWidget {
   ItemData itemData = ItemData(0, "", "", "", "", [], "", 0, 0, 0,"", []);
   

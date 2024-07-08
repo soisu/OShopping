@@ -140,21 +140,25 @@ class _TopsPageState extends State<Tops> {
                   ),
                 ),
                 SizedBox(height: 10),
-                ElevatedButton(
+                  ElevatedButton(
                   onPressed: _pickImage,
-                  child: Text('Pick Image'),
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF4C53A5),
+                  foregroundColor: Colors.white,
                 ),
-                _image == null
-                    ? Text('', style: TextStyle(color: Colors.white))
-                    : Image.file(_image!),
+              child: Text('Pick Image'),
+            ),
+              _image == null
+            ? Text('', style: TextStyle(color: Colors.white))
+            : Image.file(_image!),
               ],
             ),
           ),
           actions: <Widget>[
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white,
-              foregroundColor: Color(0xFF4C53A5),
+              backgroundColor: Color.fromARGB(255, 222, 82, 82),
+              foregroundColor: Colors.white,
             ),
               child: Text("Cancel"),
               onPressed: () {
@@ -244,7 +248,7 @@ class _TopsPageState extends State<Tops> {
               itemBuilder: (context, index) {
                 final item = filteredServices[index];
                 return Container(
-                  color: Color.fromARGB(255, 162, 197, 225),
+                  color: Colors.white10,
                   margin: EdgeInsets.symmetric(vertical: 4.0),
                   child: ListTile(
                     leading: CircleAvatar(

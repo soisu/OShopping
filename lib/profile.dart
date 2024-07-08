@@ -2,11 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:online_shopping/CartPage.dart';
-import 'package:online_shopping/localbrand.dart';
 import 'package:online_shopping/main.dart';
-import 'package:online_shopping/paymentmethod.dart';
-import 'package:online_shopping/shippingaddress.dart';
+
 
 // Define the Setting model
 class Setting {
@@ -57,9 +54,9 @@ class SettingsScreen extends StatelessWidget {
       // Define routes for the app
       routes: {
         '/': (context) => ProfileScreen(),
-        '/shipping': (context) => ShippingAddress(),
-        '/payment': (context) => PaymentMethodScreen(),
-        '/mycart': (context) => CartPage(),
+        //'/shipping': (context) => ShippingAddress(),
+        //'/payment': (context) => PaymentMethodScreen(),
+        //'/mycart': (context) => CartPage(),
         '/logout': (context) => MainPage(),
       },
       initialRoute: '/',
@@ -89,13 +86,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
         //backgroundColor: const Color.fromARGB(255, 195, 212, 226),
-        leading: IconButton(
-          onPressed: ()  => Get.to(CartPage()),
+       /* leading: IconButton(
+          onPressed: ()  => Get.to(CartPage()),  
           icon: Icon(Icons.arrow_back,
           size: 20,
           color: Color(0xFF4C53A5),
           ),
-        ),
+        ),*/
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),

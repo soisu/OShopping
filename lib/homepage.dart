@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        backgroundColor: Color(0xFF4C53A5), // Use your preferred color
+        backgroundColor: Color(0xFF4C53A5),
       ),
       drawer: Drawer(
         child: NavBar(userName: userName, userEmail: userEmail),
@@ -75,6 +75,8 @@ class HomePage extends StatelessWidget {
                           _buildCategoryButton(
                             context,
                             label: "Local Brands",
+                            backgroundColor: Color(0xFF4C53A5),
+                            textColor: Colors.white,
                             onPressed: () => Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => Localbrand()),
@@ -84,6 +86,8 @@ class HomePage extends StatelessWidget {
                           _buildCategoryButton(
                             context,
                             label: "Hot Items",
+                            backgroundColor: Color(0xFF4C53A5),
+                            textColor: Colors.white,
                             onPressed: () => Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => HotItems()),
@@ -93,6 +97,8 @@ class HomePage extends StatelessWidget {
                           _buildCategoryButton(
                             context,
                             label: "Dress",
+                            backgroundColor: Color(0xFF4C53A5),
+                            textColor: Colors.white,
                             onPressed: () => Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => Dress()),
@@ -102,6 +108,8 @@ class HomePage extends StatelessWidget {
                           _buildCategoryButton(
                             context,
                             label: "Pants",
+                            backgroundColor: Color(0xFF4C53A5),
+                            textColor: Colors.white,
                             onPressed: () => Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => pant()),
@@ -111,6 +119,8 @@ class HomePage extends StatelessWidget {
                           _buildCategoryButton(
                             context,
                             label: "Skirts",
+                            backgroundColor: Color(0xFF4C53A5),
+                            textColor: Colors.white,
                             onPressed: () => Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => Skirts()),
@@ -120,6 +130,8 @@ class HomePage extends StatelessWidget {
                           _buildCategoryButton(
                             context,
                             label: "Tops",
+                            backgroundColor: Color(0xFF4C53A5),
+                            textColor: Colors.white,
                             onPressed: () => Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => Tops()),
@@ -170,9 +182,18 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildCategoryButton(BuildContext context, {required String label, required VoidCallback onPressed}) {
+  Widget _buildCategoryButton(BuildContext context, {
+    required String label,
+    required VoidCallback onPressed,
+    Color? backgroundColor,
+    Color? textColor,
+  }) {
     return ElevatedButton(
       onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: backgroundColor,
+        foregroundColor: textColor,
+      ),
       child: Text(label),
     );
   }

@@ -4,7 +4,6 @@ import 'package:online_shopping/about.dart';
 import 'package:online_shopping/dress.dart';
 import 'package:online_shopping/hotitems.dart';
 import 'package:online_shopping/localbrand.dart';
-import 'package:online_shopping/login.dart';
 import 'package:online_shopping/main.dart';
 import 'package:online_shopping/pants.dart';
 import 'package:online_shopping/skirts.dart';
@@ -51,7 +50,7 @@ class NavBar extends StatelessWidget {
           ),
 
           ListTile(
-            leading: Icon(Icons.account_circle),
+            leading: Icon(Icons.collections_bookmark),
             title: Text('Skirts'),
              onTap: () {
               Get.to(Skirts());
@@ -81,14 +80,6 @@ class NavBar extends StatelessWidget {
             title: Text('Tops'),
              onTap: () {
               Get.to(Tops());
-            },
-          ),
-
-          ListTile(
-            leading: Icon(Icons.login),
-            title: Text('Login'),
-             onTap: () {
-              Get.to(LoginPage());
             },
           ),
        
