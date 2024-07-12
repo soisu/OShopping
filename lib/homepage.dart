@@ -68,76 +68,70 @@ class HomePage extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Column(
+                  child: Wrap(
+                    spacing: 10,
+                    runSpacing: 10,
+                    alignment: WrapAlignment.center,
                     children: [
-                      Row(
-                        children: [
-                          _buildCategoryButton(
-                            context,
-                            label: "Local Brands",
-                            backgroundColor: Color(0xFF4C53A5),
-                            textColor: Colors.white,
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Localbrand()),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          _buildCategoryButton(
-                            context,
-                            label: "Hot Items",
-                            backgroundColor: Color(0xFF4C53A5),
-                            textColor: Colors.white,
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => HotItems()),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          _buildCategoryButton(
-                            context,
-                            label: "Dress",
-                            backgroundColor: Color(0xFF4C53A5),
-                            textColor: Colors.white,
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Dress()),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          _buildCategoryButton(
-                            context,
-                            label: "Pants",
-                            backgroundColor: Color(0xFF4C53A5),
-                            textColor: Colors.white,
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => pant()),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          _buildCategoryButton(
-                            context,
-                            label: "Skirts",
-                            backgroundColor: Color(0xFF4C53A5),
-                            textColor: Colors.white,
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Skirts()),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          _buildCategoryButton(
-                            context,
-                            label: "Tops",
-                            backgroundColor: Color(0xFF4C53A5),
-                            textColor: Colors.white,
-                            onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Tops()),
-                            ),
-                          ),
-                        ],
+                      _buildCategoryButton(
+                        context,
+                        label: "Local Brands",
+                        backgroundColor: Color(0xFF4C53A5),
+                        textColor: Colors.white,
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Localbrand()),
+                        ),
+                      ),
+                      _buildCategoryButton(
+                        context,
+                        label: "Hot Items",
+                        backgroundColor: Color(0xFF4C53A5),
+                        textColor: Colors.white,
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HotItems()),
+                        ),
+                      ),
+                      _buildCategoryButton(
+                        context,
+                        label: "Dress",
+                        backgroundColor: Color(0xFF4C53A5),
+                        textColor: Colors.white,
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Dress()),
+                        ),
+                      ),
+                      _buildCategoryButton(
+                        context,
+                        label: "Pants",
+                        backgroundColor: Color(0xFF4C53A5),
+                        textColor: Colors.white,
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => pant()),
+                        ),
+                      ),
+                      _buildCategoryButton(
+                        context,
+                        label: "Skirts",
+                        backgroundColor: Color(0xFF4C53A5),
+                        textColor: Colors.white,
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Skirts()),
+                        ),
+                      ),
+                      _buildCategoryButton(
+                        context,
+                        label: "Tops",
+                        backgroundColor: Color(0xFF4C53A5),
+                        textColor: Colors.white,
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Tops()),
+                        ),
                       ),
                     ],
                   ),
@@ -190,11 +184,24 @@ class HomePage extends StatelessWidget {
   }) {
     return ElevatedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor,
-        foregroundColor: textColor,
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(backgroundColor),
+        foregroundColor: MaterialStateProperty.all(textColor),
+        padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15, horizontal: 20)),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        elevation: MaterialStateProperty.all(5),
       ),
-      child: Text(label),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }

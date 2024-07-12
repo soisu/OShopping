@@ -10,7 +10,9 @@ void main() {
   //runApp(MainPage());
   
 
-  runApp(GetMaterialApp(home: MainPage()));
+  runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MainPage()));
 }
 
 class MainPage extends StatelessWidget {

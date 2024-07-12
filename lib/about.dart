@@ -74,7 +74,7 @@ class AboutUsPage extends StatelessWidget {
 
             ListTile(
             leading: Icon(Icons.location_city),
-            title: Text('Address: No(25) 36St, Khaymatriri Qtr, Myitkyina, Myanmar'),
+            title: Text('Address: No(25) 36St, Khaymarthiri Qtr, Myitkyina, Myanmar'),
           ),
         
           ],

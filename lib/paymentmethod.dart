@@ -66,7 +66,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     height: 30,
                     color: Color(0xFF4C53A5),
                   ),
-                  _buildPriceRow("Total Payment (not including Shipping Fee)", widget.totalPrice),
+                  _buildPriceRow("Total Payment", widget.totalPrice),
                   SizedBox(height: 70), // Spacing
                   InkWell(
                     onTap: () {
